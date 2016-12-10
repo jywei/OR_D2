@@ -1,5 +1,5 @@
 class MySinatraApp < Sinatra::Base
-  get "/sinatra" do
+  get "/" do
     "Hello from Sinatra"
   end
 end
@@ -11,6 +11,7 @@ class SinatraMiddleware
 
   def call(env)
     if env["PATH_INFO"] =~ %r{^/sinatra}
+      env["PATH_INFO"].sub! %r{^/sinatra}, ""
       MySinatraApp.call(env)
     else
       @rails_app.call(env)
