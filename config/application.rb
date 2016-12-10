@@ -23,6 +23,6 @@ module Blog
 
     # config.middleware.delete ActionDispatch::Cookies
     # config.middleware.delete ActionDispatch::Session::CookieStore
-    config.middleware.swap "CustomLogger"
+    config.middleware.swap Rails::Rack::Logger, "CustomLogger"
   end
 end

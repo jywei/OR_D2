@@ -4,6 +4,7 @@ class CustomLogger
   end
 
   def call(env)
+    puts "Call " + env["PATH_INFO"]
     @app.call(env)
   end
 end
