@@ -20,5 +20,9 @@ module Blog
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.i18n.enforce_available_locales = true
+
+    # config.middleware.delete ActionDispatch::Cookies
+    # config.middleware.delete ActionDispatch::Session::CookieStore
+    config.middleware.swap "CustomLogger"
   end
 end
