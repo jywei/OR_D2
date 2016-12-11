@@ -47,3 +47,5 @@ gem 'thin', platforms: :ruby
 gem 'bootstrap-sass', '~> 3.3.5'
 
 gem 'sinatra'
+
+gem 'responders', '~> 2.0'

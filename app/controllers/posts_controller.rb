@@ -1,18 +1,23 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  respond_to :html, :xml, :json
 
   # GET /posts
   def index
     @posts = Post.recent
+    # raise method(:render).source_location.inspect
+    respond_with @posts
   end
 
   # GET /posts/1
   def show
+    respond_with @post
   end
 
   # GET /posts/new
   def new
     @post = Post.new
+    respond_with @post
   end
 
   # GET /posts/1/edit
