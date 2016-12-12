@@ -49,3 +49,5 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'sinatra'
 
 gem 'responders', '~> 2.0'
+
+gem 'post_engine', path: "../post_engine"
